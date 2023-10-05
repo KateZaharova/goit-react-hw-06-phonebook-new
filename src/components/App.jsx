@@ -31,7 +31,6 @@ const getIntialContacts = () => {
 };
 
 
-
 export const App = () => {
   const [contacts, setContacts] = useState(getIntialContacts());
   const [filter, setFilter] = useState(getIntialFilters());
@@ -45,13 +44,6 @@ export const App = () => {
     useEffect(() => {
     localStorage.setItem("contactBook", JSON.stringify(contacts))
   }, [contacts]);
-
-
-  const filteredContacts = contacts.filter(item => {
-      return item.contact.name
-        .toLowerCase()
-        .includes(filter.toLowerCase());
-    });
 
 
 const addContact = contact => {
@@ -94,7 +86,7 @@ return (
     <ContactForm onAddContact={addContact} />
     <h2>Contacts</h2>
     <Filter onChangeFilter={findName} onReset={resetFilter} initialValue={filter} />
-    <ContactList contacts={filteredContacts} onDelete={deleteContact} contactData={contacts} />
+    <ContactList/>
     <GlobalStyle/>
     </Layout>
   );
