@@ -55,10 +55,10 @@ const addContact = contact => {
   };
 
 
-const deleteContact = contactId => {
+/*const deleteContact = contactId => {
     setContacts(prevItems => prevItems.filter(item => item.id !== contactId)
     );
-  };
+  };*/
 
 
 const findName = filterName => {
