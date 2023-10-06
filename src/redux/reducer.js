@@ -1,4 +1,4 @@
-import { addContact, deleteContact, resetContactList, setStatusFilter } from "../redux/contactsSlice";
+/*import { addContact, deleteContact, resetContactList, setStatusFilter } from "../redux/contactsSlice";
 import { createReducer } from "@reduxjs/toolkit";
 
 
@@ -25,4 +25,4 @@ export const filterReducer = createReducer(filterInitialState, {
     [setStatusFilter]: (state, action) => {
         state.status = action.payload;
     },
-});
+});*/

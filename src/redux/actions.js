@@ -1,4 +1,4 @@
-import { createAction, nanoid } from "@reduxjs/toolkit";
+/*import { createAction, nanoid } from "@reduxjs/toolkit";
 
 export const addContact = createAction("contacts/addContact", text => {
     return {
@@ -13,4 +13,4 @@ export const deleteContact = createAction("contacts/deleteContact");
 
 export const resetContactList = createAction("contacts/resetContactList");
 
-//export const setStatusFilter = createAction("filter/setStatusFilter");
+//export const setStatusFilter = createAction("filter/setStatusFilter");*/
