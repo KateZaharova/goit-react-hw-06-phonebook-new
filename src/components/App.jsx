@@ -4,10 +4,10 @@ import { GlobalStyle } from "./GlobalStyle";
 import { ContactForm } from "./Form/Form";
 import { ContactList } from "./ContactList/ContactList";
 import { Filter } from "./Filter/Filter";
-import { nanoid } from 'nanoid';
-import { useState, useEffect } from "react";
+//import { nanoid } from 'nanoid';
+//import { useState, useEffect } from "react";
 
-
+/*
 const getIntialFilters = () => {
   const savedFilters = localStorage.getItem("contact-filter");
   if (savedFilters !== null) {
@@ -30,13 +30,13 @@ const getIntialContacts = () => {
   ];
 };
 
-
+*/
 export const App = () => {
-  const [contacts, setContacts] = useState(getIntialContacts());
-  const [filter, setFilter] = useState(getIntialFilters());
+  //const [contacts, setContacts] = useState(getIntialContacts());
+  //const [filter, setFilter] = useState(getIntialFilters());
 
 
-  useEffect(() => {
+  /*useEffect(() => {
     localStorage.setItem("contact-filter", JSON.stringify(filter))
   }, [filter]);
 
@@ -53,14 +53,14 @@ const addContact = contact => {
     }
     setContacts(prevItems => [...prevItems, { id: nanoid(), contact: contact }])
   };
-
+*/
 
 /*const deleteContact = contactId => {
     setContacts(prevItems => prevItems.filter(item => item.id !== contactId)
     );
   };*/
 
-
+/*
 const findName = filterName => {
     setFilter(filterName); 
   };
@@ -69,7 +69,7 @@ const findName = filterName => {
   const resetFilter = () => {
     setFilter('')
   };
-
+*/
 
 
 return (
@@ -83,9 +83,9 @@ return (
         color: '#010101'
       }}>
     <h1>Phonebook</h1>
-    <ContactForm onAddContact={addContact} />
+    <ContactForm />
     <h2>Contacts</h2>
-    <Filter onChangeFilter={findName} onReset={resetFilter} initialValue={filter} />
+    <Filter />
     <ContactList/>
     <GlobalStyle/>
     </Layout>

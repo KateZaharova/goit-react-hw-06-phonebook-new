@@ -9,7 +9,7 @@ import { deleteContact } from "redux/contactsSlice";
 export const ContactList = () => {
     const contacts = useSelector(getContacts);
     const filter = useSelector(getFilter).value;
-    const filteredContacts = contacts.filter(item => {
+    const filteredContacts = contacts.list.filter(item => {  
       return item.contact.name
         .toLowerCase()
         .includes(filter.toLowerCase());
