@@ -13,14 +13,13 @@ const contactsSlice = createSlice({
     reducers: {
         addContact: {
             reducer(state, action) {
-                
-    if (-1 !== state.findIndex(option => option.contact.name === action.payload.name)) {
-      alert(`${action.payload.name} is already in contacts.`);
-      return;
-    } 
+                if (-1 !== state.findIndex(option => option.contact.name === action.payload.name)) {
+                alert(`${action.payload.name} is already in contacts.`);
+                return;
+                } 
                 state.push({ id: nanoid(), contact: action.payload });
             },
-        /*    prepare(text) {
+            /*prepare(text) {
                 return {
                     payload: {
                         text,
