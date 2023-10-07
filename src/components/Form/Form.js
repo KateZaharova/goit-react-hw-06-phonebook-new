@@ -3,6 +3,9 @@ import { StyledForm, FieldInfo, ButtonAdd, ErrorMsg } from "./Form.styled";
 import * as Yup from 'yup';
 import { addContact } from 'redux/contactsSlice';
 import { useDispatch } from "react-redux";
+import { getContacts} from "redux/selectors";
+import { useSelector } from "react-redux";
+
 
 
 const ContactFormSchema = Yup.object().shape({
@@ -16,9 +19,16 @@ const ContactFormSchema = Yup.object().shape({
 });
 
 export const ContactForm = () => {
+    const contacts = useSelector(getContacts);
     const dispatch = useDispatch();
-    const addHandContact = (values) => dispatch(addContact(values));
-
+       
+    const addHandContact = (values) => {
+        if (-1 !== contacts.list.findIndex(option => option.contact.name === values.name)) {
+            alert(`${values.name} is already in contacts.`);
+            return;
+        }
+        dispatch(addContact(values))
+    };
     return (
         <div>
             
